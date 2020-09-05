@@ -1,3 +1,7 @@
+@gray: #828282;
+@black: #070707;
+@gray-background: #F6F6F6;
+
 .content {
   width: 940px;
   margin: 0 auto;
@@ -5,8 +9,18 @@
   &__hr {
     height: 1px;
     width: 100%;
-    background: #828282;
+    background: @gray;
     margin-top: 32px;
+  }
+
+  &__photo {
+    margin-top: 54px;
+  }
+
+  &__about {
+    padding-top: 120px;
+    margin-top: 108px;
+    background-color: @gray-background;
   }
 }
 
@@ -16,8 +30,7 @@
   margin-top: 32px;
 
   &__nav {
-    color: #828282;
-    font-family: Gilroy-Bold;
+    color: @gray;
     font-size: 18px
   }
 }
@@ -29,6 +42,41 @@
 
   &__name {
     font-size: 47px;
-    font-family: Gilroy-Bold;
+  }
+
+  &__languages {
+    transform: rotate(-90deg);
+    font-size: 16px;
+    position: relative;
+    top: -24px;
+    right: -24px
+  }
+
+  &__about {
+    font-size: 18px
+  }
+
+  &__languages,
+  &__about,
+  &__name {
+    margin-top: auto;
+  }
+}
+
+.languages--active {
+  color: @gray;
+}
+
+.about {
+  &__description {
+    margin-top: 18px;
+    font-size: 16px;
+    span {
+      font-family: Gilroy-Medium;
+    }
+  }
+
+  &__header {
+    font-size: 34px;
   }
 }
