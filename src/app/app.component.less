@@ -1,6 +1,27 @@
 @gray: #828282;
 @black: #070707;
 @gray-background: #F6F6F6;
+@size-header: 34px;
+
+@media (max-width: 375px) {
+  .content__hr {
+    display: none;
+  }
+
+  .header {
+    display: none !important;
+  }
+
+  .languages {
+    display: none;
+  }
+
+  .content__description {
+    margin-left: 26px;
+    margin-top: 65px !important;
+    flex-direction: column;
+  }
+}
 
 .content {
   width: 940px;
@@ -20,6 +41,7 @@
   &__about {
     padding-top: 120px;
     margin-top: 108px;
+    padding-bottom: 108px;
     background-color: @gray-background;
   }
 }
@@ -68,7 +90,7 @@
 }
 
 .about {
-  &__description {
+  &__description-about-me {
     margin-top: 18px;
     font-size: 16px;
     span {
@@ -77,6 +99,119 @@
   }
 
   &__header {
-    font-size: 34px;
+    font-size: @size-header;
+    text-align: center;
   }
 }
+
+.description-about-me {
+  &__item {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+
+.list-skill {
+  margin-top: 82px;
+  display: flex;
+  justify-content: space-between;
+
+  &__name {
+    margin-top: 24px;
+    font-size: 14px;
+    color: @gray;
+    height: 36px;
+  }
+
+  &__level {
+    margin-top: 40px;
+    width: 166px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.skills {
+  text-align: center;
+
+  &__header {
+    margin-top: 90px;
+    font-size: @size-header;
+  }
+
+  &__info {
+    font-size: 18px;
+    margin-top: 70px;
+    font-family: Gilroy-Medium;
+  }
+}
+
+.portfolio-list {
+  text-align: center;
+  padding-top: 112px;
+  margin-top: 110px;
+  background: @gray-background;
+
+  &__header {
+    font-size: 34px;
+    margin-bottom: 47px;
+  }
+}
+
+.portfolio-item {
+
+  &__description {
+    margin-top: 45px;
+    padding-bottom: 99px;
+    font-family: Gilroy-Medium;
+    font-size: 18px;
+    text-decoration: underline;
+  }
+}
+
+.contacts {
+  margin-top: 114px;
+  text-align: center;
+
+  &__header {
+    font-size: @size-header;
+  }
+
+  &__info {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+  &__bttn {
+    margin-top: 30px;
+    background: @black;
+    color: #fff;
+    padding: 13px 30px 6px 28px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-family: Gilroy-Bold;
+  }
+
+  &__list-contacts {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__description-contacts {
+    margin-top: 46px;
+    padding-bottom: 123px;
+    font-size: 14px;
+    color: @gray;
+    font-family: Gilroy-Medium;
+  }
+}
+
+.container {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+}
+
+
