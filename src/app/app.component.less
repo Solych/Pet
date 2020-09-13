@@ -4,8 +4,34 @@
 @size-header: 34px;
 
 @media (max-width: 375px) {
-  .content__hr {
-    display: none;
+  .content {
+    width: 375px !important;
+
+    &__photo {
+      display: flex;
+      justify-content: center;
+      img {
+        object-position: 0 0!important;
+      }
+    }
+
+    &__hr {
+      display: none;
+    }
+
+    img {
+      width: 316px !important;
+    }
+
+    &__description {
+      margin-left: 26px;
+      margin-top: 65px !important;
+      flex-direction: column;
+    }
+  }
+
+  .item-skill {
+    margin-bottom: 85px;
   }
 
   .header {
@@ -16,10 +42,9 @@
     display: none;
   }
 
-  .content__description {
-    margin-left: 26px;
-    margin-top: 65px !important;
+  .list-skill {
     flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -36,6 +61,12 @@
 
   &__photo {
     margin-top: 54px;
+    img {
+      object-fit: cover;
+      object-position: 0 -450px;
+      width: 940px;
+      height: 387px;
+    }
   }
 
   &__about {
