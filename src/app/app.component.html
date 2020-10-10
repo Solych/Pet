@@ -1,55 +1,70 @@
-<div #home class="content">
+<div *ngIf="!isNavOpened" class="content">
   <div class="content__header header">
-    <a href="#home" class="header__nav">Home</a>
-    <a href="#about" class="header__nav">About</a>
-    <a href="#skills" class="header__nav">Skills</a>
-    <a href="#portfolio" class="header__nav">Portfolio</a>
-    <a href="#contacts" class="header__nav">Contacts</a>
+    <a class="header__nav">{{'HEADER.HOME' | translate}}</a>
+    <a href="#about" class="header__nav">{{'HEADER.ABOUT' | translate}}</a>
+    <a href="#skills" class="header__nav">{{'HEADER.SKILLS' | translate}}</a>
+    <a href="#portfolio" class="header__nav">{{'HEADER.PORTFOLIO' | translate}}</a>
+    <a href="#contacts" class="header__nav">{{'HEADER.CONTACTS' | translate}}</a>
   </div>
   <div class="content__hr"></div>
   <div class="content__description description">
-    <span class="description__name">Denis <br> Novik</span>
+    <div class="description__wrap wrap">
+      <span class="wrap__description-name">
+        {{'DESCRIPTION.NAME' | translate}}
+        <br>
+        {{'DESCRIPTION.SURNAME' | translate}}</span>
+      <button (click)="isNavOpened = true" class="wrap__mobile-nav">
+        <svg width="33" height="20" viewBox="0 0 33 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="33" height="3.83721" fill="black"/>
+          <rect y="7.67383" width="33" height="3.83721" fill="black"/>
+          <rect y="15.3496" width="33" height="3.83721" fill="black"/>
+      </svg>
+      </button>
+    </div>
+
     <span class="description__about">
-      UX | UI designer
+      {{'DESCRIPTION.SPECIALITY' | translate}}
       <br>
-      24 years old, Minsk</span>
+      {{'DESCRIPTION.AGE_CITY' | translate}}</span>
     <span class="description__languages languages">
-      <span class="languages--active">RU
-      </span>| ENG</span>
+      <button [ngClass]="{'languages--active': isRuTranslateOn}" (click)="setLocale('ru')">RU</button>
+      <span>|</span>
+      <button [ngClass]="{'languages--active': !isRuTranslateOn}"  (click)="setLocale('en')">ENG</button>
+    </span>
   </div>
   <div class="content__photo">
     <img src="./assets/static/me.jpg">
   </div>
   <div class="content__about about">
-    <div id="about" class="about__header">About me</div>
+    <div id="about" class="about__header">{{'HEADER.ABOUT' | translate}}</div>
     <div class="about__description-about-me description-about-me">
       <div class="description-about-me__item">
         <span>
-        Hi, I'm Denis - UX/UI designer from Minsk.
+        {{'ABOUT.1' | translate}}
         <br>
-        I'm interested in design and everything connected with it.
+          {{'ABOUT.2' | translate}}
         </span>
       </div>
       <div class="description-about-me__item">
         <span>
-        I'm studying at courses "Web and mobile design
+        {{'ABOUT.3' | translate}}
         <br>
-        interfaces" in IT-Academy.
+          {{'ABOUT.4' | translate}}
         </span>
       </div>
       <div class="description-about-me__item">
         <span>
-        Ready to implement excellent projects
+        {{'ABOUT.5' | translate}}
         <br>
-        with wonderful people.
+          {{'ABOUT.6' | translate}}
         </span>
       </div>
 
     </div>
   </div>
   <div class="content__skills skills">
-    <div id="skills" class="skills__header">Skills</div>
-    <div class="skills__info">I work in such programs as</div>
+    <div id="skills" class="skills__header">{{'HEADER.SKILLS' | translate}}</div>
+    <div class="skills__info">{{'SKILLS.INFO' | translate}}</div>
     <div class="skills__list-skill list-skill">
       <div class="list-skill__item-skill item-skill">
         <div class="list-skill__image">
@@ -229,30 +244,30 @@
     </div>
   </div>
   <div class="content__portfolio-list portfolio-list">
-    <div id="portfolio" class="portfolio-list__header">Portfolio</div>
+    <div id="portfolio" class="portfolio-list__header">{{'HEADER.PORTFOLIO' | translate}}</div>
     <div class="portfolio-list__portfolio-item portfolio-item">
       <div class="portfolio-item__image">
         <img width="936" src="./assets/static/fashion.jpg">
       </div>
-      <div class="portfolio-item__description">Online fashion store - Homepage</div>
+      <div class="portfolio-item__description">{{'PORTFOLIO.FASHION_STORE' | translate}}</div>
     </div>
     <div class="portfolio-list__portfolio-item portfolio-item">
       <div class="portfolio-item__image">
         <img width="936" src="./assets/static/reebok.jpg">
       </div>
-      <div class="portfolio-item__description">Reebok Store - Concept</div>
+      <div class="portfolio-item__description">{{'PORTFOLIO.REEBOK_STORE' | translate}}</div>
     </div>
     <div class="portfolio-list__portfolio-item portfolio-item">
       <div class="portfolio-item__image">
         <img width="936" src="./assets/static/braun.jpg">
       </div>
-      <div class="portfolio-item__description">Braun Landing Page - Concept</div>
+      <div class="portfolio-item__description">{{'PORTFOLIO.BRAUN_LANDING' | translate}}</div>
     </div>
   </div>
   <div class="content__contacts contacts">
-    <div id="contacts" class="contacts__header">Contacts</div>
-    <div class="contacts__info">Want to know more or just chat? <br> You are welcome!</div>
-    <button class="contacts__bttn">Send message</button>
+    <div id="contacts" class="contacts__header">{{'HEADER.CONTACTS' | translate}}</div>
+    <div class="contacts__info">{{'CONTACTS.1' | translate}}<br> {{'CONTACTS.2' | translate}}</div>
+    <button class="contacts__bttn">{{'BUTTON' | translate}}</button>
     <div class="contacts__list-contacts list-contacts">
       <div class="list-contacts__container container">
         <div class="container__item">
@@ -296,8 +311,25 @@
         </div>
       </div>
     </div>
-    <div class="contacts__description-contacts">Like me on<br> LinkedIn, Instagram, Behance, Dribble</div>
+    <div class="contacts__description-contacts">
+      {{'DESCRIPTION_CONTACTS' | translate}}<br> LinkedIn, Instagram, Behance, Dribble</div>
   </div>
+</div>
+
+<div *ngIf="isNavOpened" class="mobile-nav">
+  <div class="mobile-nav__wrap-mobile wrap-mobile">
+    <a (click)="isNavOpened = false" href="#home" class="wrap-mobile__home">{{'HEADER.HOME' | translate}}</a>
+    <button (click)="isNavOpened = false" class="wrap-mobile__close">x</button>
+  </div>
+  <a (click)="navTo('#about')" class="mobile-nav__item">{{'HEADER.ABOUT' | translate}}</a>
+  <a (click)="navTo('#skills')" class="mobile-nav__item">{{'HEADER.SKILLS' | translate}}</a>
+  <a (click)="navTo('#portfolio')" class="mobile-nav__item">{{'HEADER.PORTFOLIO' | translate}}</a>
+  <a (click)="navTo('#contacts')" class="mobile-nav__item">{{'HEADER.CONTACTS' | translate}}</a>
+  <span class="mobile-nav__mob-languages mob-languages">
+      <span [ngClass]="{'mob-languages--active': isRuTranslateOn}" (click)="setLocale('ru')">RU</span>
+      <span>|</span>
+      <span [ngClass]="{'mob-languages--active': !isRuTranslateOn}" (click)="setLocale('en')">ENG</span>
+  </span>
 </div>
 
 
